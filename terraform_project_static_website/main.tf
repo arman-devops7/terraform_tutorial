@@ -23,8 +23,6 @@ resource "random_id" "rand_id" {
 # create s3 bucket
 resource "aws_s3_bucket" "mywebapp-bucket" {
   bucket = "mywebapp-bucket-${random_id.rand_id.hex}"
-
-
 }
 
 # disabling blocking ips
@@ -91,8 +89,6 @@ resource "aws_s3_object" "style_css" {
   key    = "style.css"
   content_type = "text/html"
 }
-
-
 
 output "rand_id" {
   value = aws_s3_bucket_website_configuration.mywebapp.website_endpoint
