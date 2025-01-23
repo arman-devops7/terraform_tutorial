@@ -4,7 +4,7 @@ resource "aws_instance" "nginx-server" {
   instance_type               = "<t3_micro_instance_type>"
   subnet_id                   = aws_subnet.public-subnet.id
   vpc_security_group_ids      = [aws_security_group.nginx-sg.id]
-  associate_public_ip_address = true  #provide the public ip address
+  associate_public_ip_address = true #provide the public ip address
 
   # installing nginx
   user_data = <<-EOF
@@ -20,7 +20,6 @@ resource "aws_instance" "nginx-server" {
     Name = "Nginx Server"
   }
 }
-
 
 # terraform init
 # terraform validate
